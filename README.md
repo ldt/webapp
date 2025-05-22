@@ -16,7 +16,7 @@ This is a web application built using FastAPI, Jinja2 templates, and HTMX for AJ
 
 - Python 3.10+
 - PostgreSQL database
-- Poetry for dependency management
+- UV for dependency management (https://github.com/astral-sh/uv)
 
 ### Installation
 
@@ -28,7 +28,8 @@ This is a web application built using FastAPI, Jinja2 templates, and HTMX for AJ
 
 2. Install dependencies:
    ```bash
-   poetry install
+   pip install uv
+   uv sync --dev
    ```
 
 3. Set up environment variables (see `.env.example` for reference):
@@ -39,12 +40,12 @@ This is a web application built using FastAPI, Jinja2 templates, and HTMX for AJ
 
 4. Run database migrations:
    ```bash
-   poetry run alembic upgrade head
+   uv run alembic upgrade head
    ```
 
 5. Start the development server:
    ```bash
-   poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 52485
+   uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 52485
    ```
 
 6. Open your browser and navigate to http://localhost:52485
@@ -54,12 +55,12 @@ This is a web application built using FastAPI, Jinja2 templates, and HTMX for AJ
 ### Unit Tests
 
 ```bash
-poetry run pytest
+uv run pytest
 ```
 
 ### End-to-End Tests
 
 ```bash
-poetry run playwright install
-poetry run pytest e2e/
+playwright install
+uv run pytest e2e/
 ```
