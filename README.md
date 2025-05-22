@@ -1,4 +1,4 @@
-# Web App with User Management
+# Web App with FastAPI User Management
 
 This is a web application built using FastAPI, Jinja2 templates, and HTMX for AJAX calls. It includes user management functionality using FastAPI-Users.
 
